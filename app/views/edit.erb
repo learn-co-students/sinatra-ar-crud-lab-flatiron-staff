@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Current Post</h1>
+    <h3><%= @post.name %></h3>
+    <p><%= @post.content %></p>
+    <form action='/posts/<%= @post.id %>' method="post">
+      <label for="">Post Name</label>
+      <input type="text" placeholder="<%= @post.name %>" name="name"><br>
+      <label for="">Post Content</label>
+      <input type="text" placeholder="<%= @post.content %>" name="content"><br><br>
+      <input id="hidden" type="hidden" name="_method" value="patch">
+      <input type="submit" id="submit">
+    </form>
+    <!-- <form action="/posts/<%= @post.id %>/delete" method="post">
+      <input id="hidden" type="hidden" name="_method" value="delete">
+    </form> -->
+
+  </body>
+</html>
